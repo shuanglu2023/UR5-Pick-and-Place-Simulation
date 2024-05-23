@@ -58,7 +58,7 @@
   </library_effects>
   <library_images>
     <image id="working_area_png" name="working_area_png">
-      <init_from>working%20area.png</init_from>
+      <init_from>table.png</init_from>
     </image>
   </library_images>
   <library_materials>

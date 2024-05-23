@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/home/ziyu/semantic_programming/.sem_env/bin/python3
 # license removed for brevity
 import rospy
 from std_msgs.msg import String

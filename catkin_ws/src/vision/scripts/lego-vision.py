@@ -1,4 +1,4 @@
-#! /usr/bin/env python3
+#!/home/ziyu/shuang/hand_object_interaction/.venv/bin/python3
 
 import cv2 as cv
 import numpy as np
@@ -17,9 +17,12 @@ from geometry_msgs.msg import *
 from pyquaternion import Quaternion as PyQuaternion
 
 # Global variables
-path_yolo = path.join(path.expanduser('~'), 'yolov5')
-path_vision = RosPack().get_path('vision')
-path_weigths = path.join(path_vision, 'weigths')
+# path_yolo = path.join(path.expanduser('~'), 'yolov5')
+# path_vision = RosPack().get_path('vision')
+# path_weigths = path.join(path_vision, 'weigths')
+path_yolo = "/home/ziyu/shuang/yolov8"
+path_weigths = "/home/ziyu/shuang/yolov8/runs/detect/train/weights"
+
 
 cam_point = (-0.44, -0.5, 1.58)
 height_tavolo = 0.74
@@ -28,7 +31,7 @@ origin = None
 model = None
 model_orientation = None
 
-legoClasses = ['X1-Y1-Z2', 'X1-Y2-Z1', 'X1-Y2-Z2', 'X1-Y2-Z2-CHAMFER', 'X1-Y2-Z2-TWINFILLET', 'X1-Y3-Z2', 'X1-Y3-Z2-FILLET', 'X1-Y4-Z1', 'X1-Y4-Z2', 'X2-Y2-Z2', 'X2-Y2-Z2-FILLET']
+legoClasses = ['GrayBox', 'BlueBox', 'Parallelogram', 'Cuboid', 'Octagon', 'Star']
 
 argv = sys.argv
 a_show = '-show' in argv
@@ -383,6 +386,7 @@ def process_item(imgs, item):
 def process_image(rgb, depth):    
     
     img_draw = rgb.copy()
+    
     hsv = cv.cvtColor(rgb, cv.COLOR_BGR2HSV)
 
     get_dist_tavolo(depth, hsv, img_draw)
@@ -456,18 +460,19 @@ def start_node():
     rospy.spin() 
     pass
 
+from ultralytics import YOLO
 def load_models():
     global model, model_orientation
     
     #yolo model and weights classification
     print("Loading model best.pt")
     weight = path.join(path_weigths, 'best.pt')
-    model = torch.hub.load(path_yolo,'custom',path=weight, source='local')
-
+    # model = torch.hub.load(path_yolo,'custom',path=weight, source='local')
+    model = YOLO(weight)
     #yolo model and weights orientation
-    print("Loading model orientation.pt")
-    weight = path.join(path_weigths, 'depth.pt')
-    model_orientation = torch.hub.load(path_yolo,'custom',path=weight, source='local')
+    # print("Loading model orientation.pt")
+    # weight = path.join(path_weigths, 'depth.pt')
+    # model_orientation = torch.hub.load(path_yolo,'custom',path=weight, source='local')
     pass
 
 if __name__ == '__main__':

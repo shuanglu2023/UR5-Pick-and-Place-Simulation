@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<sdf version="1.4">
+  <model name="parallelogram">
+    <static>false</static>
+    <link name="link">
+      <pose>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0.03 0 0 0</pose>
+        <mass>0.5</mass>
+        <inertia>
+          <ixx>30958504.000000</ixx>
+          <ixy>-2559881.250000</ixy>
+          <ixz>-5.531458</ixz>
+          <iyy>27480170.000000</iyy>
+          <iyz>6.230402</iyz>
+          <izz>15557725.000000</izz>
+        </inertia>
+      </inertial>
+      
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://parallelogram/meshes/Parallelogramm.stl</uri>
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/White</name>
+          </script>
+        </material>
+      </visual>
+      
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <uri>model://parallelogram/meshes/Parallelogramm.stl</uri>
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+  </model>
+</sdf>

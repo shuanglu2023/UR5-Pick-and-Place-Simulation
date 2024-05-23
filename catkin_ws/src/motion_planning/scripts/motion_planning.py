@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/home/ziyu/shuang/hand_object_interaction/.venv/bin/python3
 
 import os
 import math

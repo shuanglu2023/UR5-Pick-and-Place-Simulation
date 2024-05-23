@@ -1,3 +1,4 @@
+#!/home/ziyu/shuang/hand_object_interaction/.venv/bin/python3
 import math
 import copy
 import rospy
@@ -66,7 +67,7 @@ class ArmController:
             return (1 - math.cos(percent_value * period)) / 2
 
         (sx, sy, sz), start_quat = self.gripper_pose
-
+        print(f"current gripper pose: {self.gripper_pose}")
         if x is None:
             x = sx
         if y is None:

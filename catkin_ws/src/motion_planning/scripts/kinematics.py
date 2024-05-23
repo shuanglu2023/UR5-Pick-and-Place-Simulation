@@ -177,6 +177,6 @@ def get_pose(joints):
 
     x, y, z = th[:3, 3]
     rot = th[:3, :3]
-
+    
     z += 0.771347
     return x, y, z, rot

@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/home/ziyu/semantic_programming/.sem_env/bin/python3
 from pandas import array
 from gazebo_msgs.srv import SpawnModel, DeleteModel
 from geometry_msgs.msg import *

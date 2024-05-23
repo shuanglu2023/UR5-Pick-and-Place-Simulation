@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/home/ziyu/semantic_programming/.sem_env/bin/python3
 
 from tf.transformations import quaternion_from_euler
 from geometry_msgs.msg import *

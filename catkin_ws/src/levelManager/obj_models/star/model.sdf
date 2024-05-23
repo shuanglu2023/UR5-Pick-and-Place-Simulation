@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<sdf version="1.4">
+  <model name="star">
+    <static>false</static>
+    <link name="link">
+      <pose>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0.03 0 0 0</pose>
+        <mass>0.5</mass>
+        <inertia>
+          <ixx>19475090.000000</ixx>
+          <ixy>0.000820</ixy>
+          <ixz>-0.006821</ixz>
+          <iyy>19475090.000000</iyy>
+          <iyz>-0.000233</iyz>
+          <izz>7624491.000000</izz>
+        </inertia>
+      </inertial>
+      
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://star/meshes/Stern.stl</uri>
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/White</name>
+          </script>
+        </material>
+      </visual>
+      
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <uri>model://star/meshes/Stern.stl</uri>
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+            <contact>
+                <ode>
+                    <mu>10</mu>
+                    <mu2>10</mu2>
+                    <max_vel>0.001</max_vel>
+                    <min_depth>0.01</min_depth>
+                </ode>
+            </contact>
+            <bounce>
+                <restitution_coefficient>0</restitution_coefficient>
+                <threshold>1e+06</threshold>
+            </bounce>
+            <friction>
+                <torsional>
+                    <ode/>
+                </torsional>
+                <ode/>
+            </friction>
+      </collision>
+    </link>
+  </model>
+</sdf>

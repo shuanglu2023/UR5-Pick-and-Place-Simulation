@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<sdf version="1.4">
+  <model name="grayBox">
+    <static>false</static>
+    <link name="link">
+      <pose>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 -0.659496 -2.328312 0 0 0</pose>
+        <mass>1.0</mass>
+        <inertia>
+          <ixx>799327552</ixx>
+          <ixy>1064541</ixy>
+          <ixz>-2.520177</ixz>
+          <iyy>109614152</iyy>
+          <iyz>-1169978.5</iyz>
+          <izz>871955712</izz>
+        </inertia>
+      </inertial>
+      
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://grayBox/meshes/grayBox.stl</uri>
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Gray</name>
+          </script>
+        </material>
+      </visual>
+      
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <uri>model://grayBox/meshes/grayBox.stl</uri>
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+  </model>
+</sdf>

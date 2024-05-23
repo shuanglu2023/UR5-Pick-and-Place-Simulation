@@ -48,6 +48,7 @@
 
 
   <!-- Start Level Manager -->
+  <!--node pkg="levelManager" name="levelManager" type="levelManager.py" output="screen" /-->
   <node pkg="levelManager" name="levelManager" type="levelManager.py" output="screen" />
 
 </launch>

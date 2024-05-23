@@ -10,7 +10,7 @@ material grid/Image{
       specular 0.0 0.0 0.0 1.0 0.5
             texture_unit
             {
-                texture griglia.png
+                texture download.jpeg
             }
         }   
     }

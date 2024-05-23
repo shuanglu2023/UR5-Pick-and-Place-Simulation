@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<sdf version="1.4">
+  <model name="blueBox">
+    <static>false</static>
+    <link name="link">
+      <pose>0 0 0 0 0 0</pose>
+      <inertial>
+        <!--pose>-1.610472 0.122405 -1.421568 0 0 0</pose-->
+        <pose>-1.610472 0.122405 13.578431 0 0 0</pose>
+        <mass>1.0</mass>
+        <inertia>
+          <ixx>601094080.000000</ixx>
+          <ixy>16086886.000000</ixy>
+          <ixz>4086380.250000</ixz>
+          <iyy>602592064.000000</iyy>
+          <iyz>-300132.343750</iyz>
+          <izz>1142417664</izz>
+        </inertia>
+      </inertial>
+      
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://blueBox/meshes/Aufnahme_Quadratisch.stl</uri>
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Blue</name>
+          </script>
+        </material>
+      </visual>
+      
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <uri>model://blueBox/meshes/Aufnahme_Quadratisch.stl</uri>
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+  </model>
+</sdf>

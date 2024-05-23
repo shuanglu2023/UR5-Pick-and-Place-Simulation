@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<sdf version="1.4">
+  <model name="cuboid">
+    <static>false</static>
+    <link name="link">
+      <pose>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0.03 0 0 0</pose>
+        <mass>0.5</mass>
+        <inertia>
+          <ixx>41341912</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>41341912</iyy>
+          <iyz>0</iyz>
+          <izz>25428068</izz>
+        </inertia>
+      </inertial>
+      
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://cuboid/meshes/Quader.stl</uri>
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/White</name>
+          </script>
+        </material>
+      </visual>
+      
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <uri>model://cuboid/meshes/Quader.stl</uri>
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+        </geometry>
+                <max_contacts>10</max_contacts>
+        <surface>
+            <contact>
+                <ode>
+                    <mu>10</mu>
+                    <mu2>10</mu2>
+                    <max_vel>0.01</max_vel>
+                    <min_depth>0.0</min_depth>
+                </ode>
+            </contact>
+            <bounce>
+                <restitution_coefficient>0</restitution_coefficient>
+                <threshold>1e+06</threshold>
+            </bounce>
+            <friction>
+                <torsional>
+                    <ode/>
+                </torsional>
+                <ode/>
+            </friction>
+        </surface>
+      </collision>
+    </link>
+  </model>
+</sdf>
